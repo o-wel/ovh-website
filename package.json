@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://o-wel.github.io/ovh-website",
+  "homepage": "https://o-wel.github.io/ovh-website/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
