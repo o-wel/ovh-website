@@ -1,6 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-import {Flex, Group, useMantineTheme} from "@mantine/core";
-import { IconCircle } from '@tabler/icons-react'; // Placeholder icon
+import {Avatar, Flex, Group, useMantineTheme} from "@mantine/core";
 import NavButton from "../components/navbutton";
 
 function Navbar() {
@@ -11,23 +10,27 @@ function Navbar() {
             <Flex
                 justify="space-between"
                 align="center"
+                m={'lg'}
             >
                 <Group>
                     <NavButton
                         component={Link}
                         to="/ovh-website"
+                        leftSection={<Avatar
+                            size={"30px"}
+                            src="/ovh-website/LinkedIn-Headshot.png"
+                            alt="Owen Hart"
+                            />}
+                        color={theme.colors.analogousColors[8]}
                     >
-                        <span style={{ display: "flex", alignItems: "center" }}>
-                            <IconCircle size={18} style={{ marginRight: 8 }} />
-                            Owen Hart
-                        </span>
+                        Owen Hart
                     </NavButton>
                 </Group>
                 <Group>
-                    <NavButton component={Link} to="/ovh-website/about">
+                    <NavButton component={Link} to="/ovh-website/about" color={theme.colors.analogousColors[7]}>
                         About
                     </NavButton>
-                    <NavButton component={Link} to="/ovh-website/projects">
+                    <NavButton component={Link} to="/ovh-website/projects" color={theme.colors.analogousColors[7]}>
                         Projects
                     </NavButton>
                 </Group>

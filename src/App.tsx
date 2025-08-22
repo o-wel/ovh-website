@@ -9,7 +9,7 @@ function App() {
     const theme = useMantineTheme();
 
     // gradient background for the entire website
-    document.body.style.background = `linear-gradient(to left, ${theme.colors.analogousColors[2]} 0%, ${theme.colors.analogousColors[8]} 100%)`;
+    document.body.style.background = `linear-gradient(to left, ${theme.colors.purpleColors[1]} 0%, ${theme.colors.purpleColors[0]} 100%)`;
 
     return (
         <BrowserRouter>

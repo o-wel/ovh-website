@@ -7,9 +7,11 @@ interface NavButtonProps {
     children: ReactNode;
     component: typeof Link;
     to: string;
+    color: string;
+    leftSection?: ReactNode;
 }
 
-function NavButton({ children, component, to }: NavButtonProps) {
+function NavButton({ children, component, to, color, leftSection}: NavButtonProps) {
     const theme = useMantineTheme();
     const {hovered, ref: hoverRef} = useHover();
 
@@ -20,11 +22,12 @@ function NavButton({ children, component, to }: NavButtonProps) {
             component={component}
             to={to}
             variant="transparent"
+            leftSection={leftSection}
             style={{
-                color: hovered ? theme.colors.analogousColors[9] : theme.colors.analogousColors[7],
+                color: color,
                 textDecoration: hovered ? "underline" : "none",
                 textUnderlineOffset: hovered ? "8px" : "2px",
-                fontSize: theme.fontSizes.lg,
+                fontSize: theme.fontSizes.xl,
                 fontFamily: theme.fontFamily,
                 transition: "color 0.4s, text-underline-offset 0.4s",
             }}
