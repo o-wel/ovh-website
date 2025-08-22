@@ -16,7 +16,6 @@ function HomePage() {
                     Hi, I'm Owen Hart
                 </Text>
                 <Text
-                    w={"50%"}
                     style={{
                         fontSize: theme.fontSizes.md,
                         fontFamily: theme.fontFamily,
