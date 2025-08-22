@@ -57,21 +57,15 @@ const wpiProjects: Project[] = [
 
 const personalProjects: Project[] = [
     {
-        title: "Personal Project 1",
-        date: "",
-        description: "Description for personal project 1.",
-        skills: "",
+        title: "Minecraft Mod Manager",
+        date: "January 2025 - Present",
+        description: 'Working alongside a friend, we are developing a mod managing tool for minecraft. This tool can perform file ' +
+            'management for mod "groups", which is essentially just manipulating the folder of mods that the game launches with. It' +
+            'is also capable of launching minecraft and downloading mods from Modrinth, a popular mod website. ',
+        skills: "-Python Tkinter",
         image: "/images/personal-project1.jpg",
-        link: "#"
+        link: "https://github.com/JackTWing/MC-ModManager"
     },
-    {
-        title: "Personal Project 2",
-        date: "",
-        description: "Description for personal project 2.",
-        skills: "",
-        image: "/images/personal-project2.jpg",
-        link: "#"
-    }
 ];
 
 function ProjectList({projects}: { projects: Project[] }) {
@@ -82,7 +76,7 @@ function ProjectList({projects}: { projects: Project[] }) {
             {projects.map((project) => (
                 <Card bg={theme.colors.purpleColors[2]} shadow="sm" p="lg" radius="md" w={"80%"}>
                     <Flex direction="row" align="center" justify="space-between">
-                        <Box style={{ flex: 1}}>
+                        <Flex direction="column" w={"50%"}>
                             <Text size={'lg'}
                                   style={{
                                       fontSize: theme.fontSizes.lg,
@@ -110,12 +104,13 @@ function ProjectList({projects}: { projects: Project[] }) {
                             <Anchor href={project.link} target="_blank" rel="noopener noreferrer">
                                 visit this project here
                             </Anchor>
-                        </Box>
+                        </Flex>
                         <Text mb="xs"
                               style={{
                                   fontSize: theme.fontSizes.md,
                                   fontFamily: theme.fontFamily,
                                   color: theme.colors.analogousColors[7],
+                                  whiteSpace: "pre-line",
                               }}>
                             {project.skills}
                         </Text>
