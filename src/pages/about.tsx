@@ -1,4 +1,5 @@
 import {Avatar, Flex, Text, useMantineTheme} from "@mantine/core";
+import {aboutMeText} from "../TextConstants.ts";
 
 function About() {
     const theme = useMantineTheme();
@@ -12,12 +13,15 @@ function About() {
             />
             <Text
                 mt={"md"}
+                w={"50%"}
+                m={"md"}
                 style={{
                     fontSize: theme.fontSizes.md,
                     fontFamily: theme.fontFamily,
                     color: theme.colors.analogousColors[7],
+                    whiteSpace: "pre-line",
                 }}>
-                *Please note: this website is a work in progress
+                {aboutMeText}
             </Text>
 
         </Flex>

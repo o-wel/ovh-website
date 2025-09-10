@@ -50,7 +50,7 @@ const wpiProjects: Project[] = [
             "order to find the shortest path between a given actor and movie node. Developed the implementation using the breadth-first " +
             "search algorithm and high-level, object-oriented concepts of classes, interfaces, hash tables, queues, and lists.",
         skills: "-Algorithms \n -Java",
-        image: "/images/personal-project2.jpg",
+        image: "/images/personal-project1.jpg",
         link: "http://localhost:5173/ovh-website"
     }
 ];
@@ -63,7 +63,7 @@ const personalProjects: Project[] = [
             'management for mod "groups", which is essentially just manipulating the folder of mods that the game launches with. It' +
             'is also capable of launching minecraft and downloading mods from Modrinth, a popular mod website. ',
         skills: "-Python Tkinter",
-        image: "/images/personal-project1.jpg",
+        image: "./Mod-Manager.png",
         link: "https://github.com/JackTWing/MC-ModManager"
     },
 ];
@@ -75,16 +75,16 @@ function ProjectList({projects}: { projects: Project[] }) {
         <Stack align={"center"} w={"100%"} gap={"lg"}>
             {projects.map((project) => (
                 <Card bg={theme.colors.purpleColors[2]} shadow="sm" p="lg" radius="md" w={"80%"}>
-                    <Flex direction="row" align="center" justify="space-between">
-                        <Flex direction="column" w={"50%"}>
-                            <Text size={'lg'}
-                                  style={{
-                                      fontSize: theme.fontSizes.lg,
-                                      fontFamily: theme.headings.fontFamily,
-                                      color: theme.colors.analogousColors[7],
-                                  }}>
-                                {project.title}
-                            </Text>
+                    <Text size={'lg'}
+                          style={{
+                              fontSize: theme.fontSizes.lg,
+                              fontFamily: theme.headings.fontFamily,
+                              color: theme.colors.analogousColors[7],
+                          }}>
+                        {project.title}
+                    </Text>
+                    <Flex direction="row" justify="space-between">
+                        <Flex direction="column" w={"40%"}>
                             <Text mb="xs"
                                   style={{
                                       fontSize: theme.fontSizes.md,
@@ -105,16 +105,26 @@ function ProjectList({projects}: { projects: Project[] }) {
                                 visit this project here
                             </Anchor>
                         </Flex>
-                        <Text mb="xs"
-                              style={{
-                                  fontSize: theme.fontSizes.md,
-                                  fontFamily: theme.fontFamily,
-                                  color: theme.colors.analogousColors[7],
-                                  whiteSpace: "pre-line",
-                              }}>
-                            {project.skills}
-                        </Text>
-                        <Image src={project.image} alt={project.title} w={180} radius="md"/>
+                        <Flex direction="column" align={"center"} w={"20%"}>
+                            <Text mb="xs"
+                                  style={{
+                                      fontSize: theme.fontSizes.lg,
+                                      fontFamily: theme.headings.fontFamily,
+                                      color: theme.colors.analogousColors[7],
+                                  }}>
+                                Skills Used:
+                            </Text>
+                            <Text mb="xs"
+                                  style={{
+                                      fontSize: theme.fontSizes.md,
+                                      fontFamily: theme.fontFamily,
+                                      color: theme.colors.analogousColors[7],
+                                      whiteSpace: "pre-line",
+                                  }}>
+                                {project.skills}
+                            </Text>
+                        </Flex>
+                        <Image src={project.image} alt={project.title} w={"40%"} h={"40%"} radius="md"/>
                     </Flex>
                 </Card>
             ))}
