@@ -1,28 +1,32 @@
-import {Avatar, Flex, Text, useMantineTheme} from "@mantine/core";
+import {Flex, Text, Card, useMantineTheme, Image} from "@mantine/core";
 import {aboutMeText} from "../TextConstants.ts";
 
 function About() {
     const theme = useMantineTheme();
 
+    const textStyleMed = {
+        fontSize: theme.fontSizes.md,
+        fontFamily: theme.fontFamily,
+        color: theme.colors.purpleColors[0],
+        whiteSpace: "pre-line",
+    }
+
     return (
         <Flex justify={"center"} align={"center"}>
-            <Avatar
-                size={"400px"}
+            <Image
+                w={'15%'}
+                radius={"10rem"}
                 src="/ovh-website/LinkedIn-Headshot.png"
                 alt="Owen Hart"
             />
-            <Text
-                mt={"md"}
-                w={"50%"}
-                m={"md"}
-                style={{
-                    fontSize: theme.fontSizes.md,
-                    fontFamily: theme.fontFamily,
-                    color: theme.colors.analogousColors[7],
-                    whiteSpace: "pre-line",
-                }}>
-                {aboutMeText}
-            </Text>
+            <Card bg={theme.colors.analogousColors[9]} shadow="sm" p="lg" radius="md" w={"50%"} m={"md"}>
+                <Text
+                    mt={"md"}
+                    m={"md"}
+                    style={textStyleMed}>
+                    {aboutMeText}
+                </Text>
+            </Card>
 
         </Flex>
     )
